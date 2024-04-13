@@ -10,8 +10,53 @@
     />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
-    <h1>Pokédex</h1>
+  <body class="container">
+    <header>
+      <h1>Pokédex</h1>
+      <p>Hay <strong id="total-pokemones">#</strong> pokemones en la pokedex</p>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="row">
+      <aside class="col-6">
+        <h2>nombre</h2>
+        <div class="text-center">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+            alt="pokemon-ditto"
+          />
+        </div>
+      </aside>
+      <section class="col-6 text-end">
+        <p>ab1</p>
+        <p>ab1</p>
+        <p>ab1</p>
+        <p>ab1</p>
+        <p>ab1</p>
+      </section>
+    </main>
+
+    <footer class="row gap-2">
+      <!--Lista pokemones-->
+    </footer>
+
     <script type="module" src="js/index.js"></script>
   </body>
 </html>
