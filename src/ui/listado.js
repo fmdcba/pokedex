@@ -34,7 +34,8 @@ export function agregarPokemonAlListado(pokemon, callbackSeleccionPokemon) {
   $contenedorTexto.appendChild($textoImagen);
 }
 
-function mostrarInformacionPokemon(data) {
+export function mostrarPokemon(data) {
+  const $imagen = document.querySelector('#imagen');
   const $nombre = document.querySelector('#nombre');
   const $numero = document.querySelector('#numero');
   const $experiencia = document.querySelector('#experiencia');
@@ -42,6 +43,8 @@ function mostrarInformacionPokemon(data) {
   const $habilidades = document.querySelector('#habilidades');
   const $altura = document.querySelector('#altura');
   const $peso = document.querySelector('#peso');
+  $imagen.setAttribute('src', data.sprites.front_default);
+  $imagen.setAttribute('alt', `imagen-pokemon-${data.name}`);
   $nombre.textContent = data.name;
   $numero.textContent = data.order;
   $experiencia.textContent = data.base_experience;
@@ -61,18 +64,4 @@ function mostrarInformacionPokemon(data) {
     $habilidadTexto.classList.add('badge', 'text-bg-warning', 'ps-2');
     $habilidades.appendChild($habilidadTexto);
   });
-}
-
-/* async function mostrarPokemon(evt) {
-  const idPokemon = evt.target.id;
-  const dataPokemon = await obtenerPokemon(idPokemon);
-
-  const $img = document.querySelector('#imagen-pokemon');
-  $img.setAttribute('src', dataPokemon.sprites.front_default);
-
-  mostrarInformacionPokemon(dataPokemon);
-} */
-
-export function mostrarPokemon(poke) {
-  console.log(poke);
 }
