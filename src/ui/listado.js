@@ -63,7 +63,7 @@ function mostrarInformacionPokemon(data) {
   });
 }
 
-async function mostrarPokemon(evt) {
+/* async function mostrarPokemon(evt) {
   const idPokemon = evt.target.id;
   const dataPokemon = await obtenerPokemon(idPokemon);
 
@@ -71,4 +71,8 @@ async function mostrarPokemon(evt) {
   $img.setAttribute('src', dataPokemon.sprites.front_default);
 
   mostrarInformacionPokemon(dataPokemon);
+} */
+
+export function mostrarPokemon(poke) {
+  console.log(poke);
 }

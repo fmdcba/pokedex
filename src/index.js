@@ -3,10 +3,11 @@ import { obtenerPokemones, obtenerPokemon } from './api/pokemon.js';
 import {
   actualizarTotalPokemones,
   agregarPokemonAlListado,
+  mostrarPokemon,
 } from './ui/listado.js';
 
-async function actualizarPokemon() {
-  await obtenerPokemon(mostrarPokemon());
+async function actualizarPokemon(e) {
+  mostrarPokemon(await obtenerPokemon(e.target.id));
 }
 
 async function inicializar() {
@@ -16,7 +17,7 @@ async function inicializar() {
   const pokemones = Object.entries(listaPokemones.results);
   pokemones.forEach(async (pokemon) => {
     agregarPokemonAlListado(
-      await obtenerPokemon(pokemon[0]),
+      await obtenerPokemon(pokemon[1].name),
       actualizarPokemon,
     );
   });
