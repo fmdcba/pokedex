@@ -27,15 +27,15 @@ export function agregarPokemonAlListado(pokemon, callbackSeleccionPokemon) {
   $textoImagen.id = pokemonNombre;
   $textoImagen.addEventListener('click', callbackSeleccionPokemon);
 
-  const $listaPokemon = document.querySelector('footer');
+  const $listaPokemon = document.querySelector('#lista-pokemon');
   $listaPokemon.appendChild($contenedor);
   $contenedor.appendChild($imagen);
   $contenedor.appendChild($contenedorTexto);
   $contenedorTexto.appendChild($textoImagen);
 }
 
-export function mostrarPokemon(data) {
-  const $imagen = document.querySelector('#imagen');
+export function mostrarPokemon(pokemon) {
+  const $imagen = document.querySelector('#imagen-pokemon');
   const $nombre = document.querySelector('#nombre');
   const $numero = document.querySelector('#numero');
   const $experiencia = document.querySelector('#experiencia');
@@ -43,22 +43,22 @@ export function mostrarPokemon(data) {
   const $habilidades = document.querySelector('#habilidades');
   const $altura = document.querySelector('#altura');
   const $peso = document.querySelector('#peso');
-  $imagen.setAttribute('src', data.sprites.front_default);
-  $imagen.setAttribute('alt', `imagen-pokemon-${data.name}`);
-  $nombre.textContent = data.name;
-  $numero.textContent = data.order;
-  $experiencia.textContent = data.base_experience;
+  $imagen.setAttribute('src', pokemon.sprites.front_default);
+  $imagen.setAttribute('alt', `imagen-del-pokemon-${pokemon.name}`);
+  $nombre.textContent = pokemon.name;
+  $numero.textContent = pokemon.order;
+  $experiencia.textContent = pokemon.base_experience;
   $habilidades.innerHTML = '';
   $tipo.innerHTML = '';
-  $altura.textContent = data.height;
-  $peso.textContent = data.weight;
-  data.types.forEach((tipo) => {
+  $altura.textContent = pokemon.height;
+  $peso.textContent = pokemon.weight;
+  pokemon.types.forEach((tipo) => {
     const $tipoTexto = document.createElement('span');
     $tipoTexto.textContent = tipo.type.name;
-    $tipoTexto.classList.add('badge', 'text-bg-primary', 'ps-2');
+    $tipoTexto.classList.add('badge', 'text-bg-danger', 'ps-2');
     $tipo.appendChild($tipoTexto);
   });
-  data.abilities.forEach((habilidad) => {
+  pokemon.abilities.forEach((habilidad) => {
     const $habilidadTexto = document.createElement('span');
     $habilidadTexto.textContent = habilidad.ability.name;
     $habilidadTexto.classList.add('badge', 'text-bg-warning', 'ps-2');

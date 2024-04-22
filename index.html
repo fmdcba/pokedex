@@ -8,44 +8,111 @@
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body class="container">
-    <header>
-      <h1>Pokédex</h1>
-      <p>Hay <strong id="total-pokemones">#</strong> pokemones en la pokedex</p>
-
-      <nav aria-label="Page navigation example">
-        <ul class="pagination"></ul>
-      </nav>
+  <body class="container bg-danger">
+    <header class="row">
+      <div class="col-8">
+        <h1
+          class="text-xxl-start px-2 text-white border border-secondary text-uppercase"
+        >
+          Pokemones: <strong id="total-pokemones">#</strong>
+        </h1>
+      </div>
+      <div class="bg-primary col-4 text-center">
+        <p>paginador</p>
+      </div>
     </header>
 
     <main class="row">
-      <aside class="col-6">
-        <h2 class="text-center" id="nombre">Pokemon</h2>
-        <div class="text-center">
-          <img
-            id="imagen"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTktFWF8wiLqdJCEu4W2s5bUzzftqusJEbPGGwSsV-wSw&s"
-            alt="pokebola"
-            width="200px"
-            height="200px"
-          />
+      <section class="col-6">
+        <div
+          id="detalle-pokemon"
+          class="border border-secondary bg-info-subtle"
+        >
+          <h2 class="text-start px-2 text-white" id="nombre">
+            Click en un pokemon
+          </h2>
+          <div
+            id="contenedor-imagen-pokemon"
+            class="text-center p-3 border border-secondary m-2 min-vh-25 bg-secondary-subtle"
+          >
+            <img
+              id="imagen-pokemon"
+              class="img-fluid"
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/74aec840-98e2-4a1e-b66a-e71e3eb0545e/dfbcoj1-4374cfa0-7a6a-4779-82c8-54751ea95e01.png/v1/fill/w_256,h_256/pokeball__pixel_art__by_lobina133_dfbcoj1-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjU2IiwicGF0aCI6IlwvZlwvNzRhZWM4NDAtOThlMi00YTFlLWI2NmEtZTcxZTNlYjA1NDVlXC9kZmJjb2oxLTQzNzRjZmEwLTdhNmEtNDc3OS04MmM4LTU0NzUxZWE5NWUwMS5wbmciLCJ3aWR0aCI6Ijw9MjU2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.ZzYG1h7mJLbsqHw4p-0LYxz-ZHz29t1L3A1tOqC5sJY"
+              height="300px"
+              width="300px"
+            />
+          </div>
+        </div>
+        <div id="lista-pokemon" class="row gap-2 justify-content-center p-3">
+          <!--Lista pokemones-->
+        </div>
+      </section>
+      <aside class="col-6 text-end bg-success-subtle">
+        <div class="bg-white p-3 m-2 border rounded position-relative">
+          <h2>
+            <span
+              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              >Nº:</span
+            >
+          </h2>
+          <h2 id="numero">...</h2>
+        </div>
+        <div class="bg-white p-3 m-2 border rounded position-relative">
+          <h2>
+            <span
+              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              >Experiencia:</span
+            >
+          </h2>
+          <h2 id="experiencia">...</h2>
+        </div>
+        <div class="bg-white p-3 m-2 border rounded position-relative">
+          <h2>
+            <span
+              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              >Tipo:</span
+            >
+          </h2>
+          <h2 id="tipo">...</h2>
+        </div>
+        <div class="bg-white p-3 m-2 border rounded position-relative">
+          <h2>
+            <span
+              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              >Habilidades:</span
+            >
+          </h2>
+          <h2 id="habilidades">...</h2>
+        </div>
+        <div class="bg-white p-3 m-2 border rounded position-relative">
+          <h2>
+            <span
+              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              >Altura:</span
+            >
+          </h2>
+          <h2 id="altura">...</h2>
+        </div>
+        <div class="bg-white p-3 m-2 border rounded position-relative">
+          <h2>
+            <span
+              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              >Peso:</span
+            >
+          </h2>
+          <h2 id="peso">...</h2>
         </div>
       </aside>
-      <section class="col-6 text-end">
-        <p>Nº: <span id="numero"></span></p>
-        <p>Experiencia: <span id="experiencia"></span></p>
-        <p>Tipo: <span id="tipo"></span></p>
-        <p>Habilidades: <span id="habilidades"></span></p>
-        <p>Altura: <span id="altura"></span></p>
-        <p>Peso: <span id="peso"></span></p>
-      </section>
     </main>
-
-    <footer class="row gap-2 justify-content-center p-3">
-      <!--Lista pokemones-->
-    </footer>
 
     <script src="src/index.js" type="module"></script>
   </body>
