@@ -45,7 +45,6 @@ export function agregarPokemonAlListado(pokemon, callbackSeleccionPokemon) {
 export function mostrarPokemon(pokemon) {
   const $imagen = document.querySelector('#imagen-pokemon');
   const $nombre = document.querySelector('#nombre');
-  const $numero = document.querySelector('#numero');
   const $id = document.querySelector('#id');
   const $experiencia = document.querySelector('#experiencia');
   const $tipo = document.querySelector('#tipo');
@@ -67,7 +66,6 @@ export function mostrarPokemon(pokemon) {
   $imagen.setAttribute('alt', `imagen-del-pokemon-${pokemon.name}`);
   $nombre.textContent = pokemon.name;
   $nombre.classList.add('text-uppercase');
-  $numero.textContent = pokemon.order;
   $id.textContent = pokemon.id;
   $experiencia.textContent = pokemon.base_experience;
   $habilidades.innerHTML = '';
