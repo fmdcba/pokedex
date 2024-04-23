@@ -75,13 +75,13 @@ export function mostrarPokemon(pokemon) {
   pokemon.types.forEach((tipo) => {
     const $tipoTexto = document.createElement('span');
     $tipoTexto.textContent = tipo.type.name;
-    $tipoTexto.classList.add('badge', 'text-bg-dark', 'mx-2');
+    $tipoTexto.classList.add('badge', 'text-bg-dark', 'm-4');
     $tipo.appendChild($tipoTexto);
   });
   pokemon.abilities.forEach((habilidad) => {
     const $habilidadTexto = document.createElement('span');
     $habilidadTexto.textContent = habilidad.ability.name;
-    $habilidadTexto.classList.add('badge', 'text-bg-dark', 'mx-2');
+    $habilidadTexto.classList.add('badge', 'text-bg-dark', 'm-4');
     $habilidades.appendChild($habilidadTexto);
   });
 }
