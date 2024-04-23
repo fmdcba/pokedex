@@ -12,7 +12,7 @@ export function agregarPokemonAlListado(pokemon, callbackSeleccionPokemon) {
   const $contenedorTexto = document.createElement('div');
   const $textoImagen = document.createElement('a');
 
-  $contenedor.classList.add('card', 'col-2', 'text-center', 'bg-warning');
+  $contenedor.classList.add('card', 'col-2', 'text-start', 'bg-warning');
   $contenedor.style.width = '150px';
   $contenedor.style.height = '170px';
 
@@ -56,13 +56,13 @@ export function mostrarPokemon(pokemon) {
   pokemon.types.forEach((tipo) => {
     const $tipoTexto = document.createElement('span');
     $tipoTexto.textContent = tipo.type.name;
-    $tipoTexto.classList.add('badge', 'text-bg-danger', 'mx-2');
+    $tipoTexto.classList.add('badge', 'text-bg-dark', 'mx-2');
     $tipo.appendChild($tipoTexto);
   });
   pokemon.abilities.forEach((habilidad) => {
     const $habilidadTexto = document.createElement('span');
     $habilidadTexto.textContent = habilidad.ability.name;
-    $habilidadTexto.classList.add('badge', 'text-bg-danger', 'mx-2');
+    $habilidadTexto.classList.add('badge', 'text-bg-dark', 'mx-2');
     $habilidades.appendChild($habilidadTexto);
   });
 }
