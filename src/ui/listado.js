@@ -19,7 +19,10 @@ export function agregarPokemonAlListado(pokemon, callbackSeleccionPokemon) {
   if (pokemonImg !== null) {
     $imagen.setAttribute('src', pokemonImg);
   } else {
-    $imagen.setAttribute('src', './public/pokebola.png');
+    $imagen.setAttribute(
+      'src',
+      'https://github.com/fmdcba/pokedex/assets/95236196/a1f9187d-be6f-45d3-87b0-55dceffe7a12',
+    );
   }
 
   $imagen.className = 'card-img-top';
@@ -54,7 +57,10 @@ export function mostrarPokemon(pokemon) {
   if (imagenPokemon !== null) {
     $imagen.setAttribute('src', imagenPokemon);
   } else {
-    $imagen.setAttribute('src', './public/pokebola.png');
+    $imagen.setAttribute(
+      'src',
+      'https://github.com/fmdcba/pokedex/assets/95236196/a1f9187d-be6f-45d3-87b0-55dceffe7a12',
+    );
   }
 
   $imagen.setAttribute('alt', `imagen-del-pokemon-${pokemon.name}`);
