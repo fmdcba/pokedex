@@ -18,30 +18,27 @@
   </head>
   <body class="container bg-danger">
     <header class="row">
-      <div class="col-8">
-        <h1
-          class="text-xxl-start px-2 text-white border border-secondary text-uppercase"
-        >
-          Pokemones: <strong id="total-pokemones">#</strong>
+      <div class="col-8 bg-warning border border-secondary">
+        <h1 class="fw-bolder text-xxl-center px-2 text-black text-uppercase">
+          Pokédex
         </h1>
       </div>
-      <div class="bg-primary col-4 text-center">
-        <p>paginador</p>
+      <div
+        class="col-4 text-white text-center bg-primary border border-secondary"
+      >
+        <h2>Total: <strong id="total-pokemones">#</strong></h2>
       </div>
     </header>
 
     <main class="row">
-      <section class="col-6">
-        <div
-          id="detalle-pokemon"
-          class="border border-secondary bg-info-subtle"
-        >
-          <h2 class="text-start px-2 text-white" id="nombre">
-            Click en un pokemon
+      <section class="col-6 bg-info-subtle border border-secondary">
+        <div id="detalle-pokemon border border-secondary ">
+          <h2 class="fw-bold text-start px-2 text-black" id="nombre">
+            Elige un pokemón...
           </h2>
           <div
             id="contenedor-imagen-pokemon"
-            class="text-center p-3 border border-secondary m-2 min-vh-25 bg-secondary-subtle"
+            class="text-center p-3 border border-secondary m-2 bg-light"
           >
             <img
               id="imagen-pokemon"
@@ -52,15 +49,18 @@
             />
           </div>
         </div>
-        <div id="lista-pokemon" class="row gap-2 justify-content-center p-3">
+        <div
+          id="lista-pokemon"
+          class="row gap-2 justify-content-center p-3 bg-warning-subtle"
+        >
           <!--Lista pokemones-->
         </div>
       </section>
-      <aside class="col-6 text-end bg-success-subtle">
+      <aside class="col-6 text-end bg-success-subtle border border-secondary">
         <div class="bg-white p-3 m-2 border rounded position-relative">
           <h2>
             <span
-              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              class="text-start badge text-bg-warning position-absolute top-0 start-0"
               >Nº:</span
             >
           </h2>
@@ -69,7 +69,7 @@
         <div class="bg-white p-3 m-2 border rounded position-relative">
           <h2>
             <span
-              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              class="text-start badge text-bg-warning position-absolute top-0 start-0"
               >Experiencia:</span
             >
           </h2>
@@ -78,7 +78,7 @@
         <div class="bg-white p-3 m-2 border rounded position-relative">
           <h2>
             <span
-              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              class="text-start badge text-bg-warning position-absolute top-0 start-0"
               >Tipo:</span
             >
           </h2>
@@ -87,7 +87,7 @@
         <div class="bg-white p-3 m-2 border rounded position-relative">
           <h2>
             <span
-              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              class="text-start badge text-bg-warning position-absolute top-0 start-0"
               >Habilidades:</span
             >
           </h2>
@@ -96,7 +96,7 @@
         <div class="bg-white p-3 m-2 border rounded position-relative">
           <h2>
             <span
-              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              class="text-start badge text-bg-warning position-absolute top-0 start-0"
               >Altura:</span
             >
           </h2>
@@ -105,12 +105,14 @@
         <div class="bg-white p-3 m-2 border rounded position-relative">
           <h2>
             <span
-              class="text-start badge text-bg-secondary position-absolute top-0 start-0"
+              class="text-start badge text-bg-warning position-absolute top-0 start-0"
               >Peso:</span
             >
           </h2>
           <h2 id="peso">...</h2>
         </div>
+
+        <div>PAGINADOR</div>
       </aside>
     </main>
 
