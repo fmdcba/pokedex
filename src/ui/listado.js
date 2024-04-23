@@ -16,7 +16,12 @@ export function agregarPokemonAlListado(pokemon, callbackSeleccionPokemon) {
   $contenedor.style.width = '150px';
   $contenedor.style.height = '170px';
 
-  $imagen.setAttribute('src', pokemonImg);
+  if (pokemonImg !== null) {
+    $imagen.setAttribute('src', pokemonImg);
+  } else {
+    $imagen.setAttribute('src', './public/pokebola.png');
+  }
+
   $imagen.className = 'card-img-top';
   $imagen.style.width = '100px';
 
@@ -43,7 +48,15 @@ export function mostrarPokemon(pokemon) {
   const $habilidades = document.querySelector('#habilidades');
   const $altura = document.querySelector('#altura');
   const $peso = document.querySelector('#peso');
-  $imagen.setAttribute('src', pokemon.sprites.front_default);
+
+  const imagenPokemon = pokemon.sprites.front_default;
+
+  if (imagenPokemon !== null) {
+    $imagen.setAttribute('src', imagenPokemon);
+  } else {
+    $imagen.setAttribute('src', './public/pokebola.png');
+  }
+
   $imagen.setAttribute('alt', `imagen-del-pokemon-${pokemon.name}`);
   $nombre.textContent = pokemon.name;
   $nombre.classList.add('text-uppercase');
