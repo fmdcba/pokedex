@@ -3,6 +3,14 @@ import { obtenerPokemones } from '../api/pokemon.js';
 
 const POKEMONES_POR_PAGINA = 20;
 
+async function manejarCambioDePagina(e) {
+  const numeroDePagina = e.target.textContent;
+  const offset = (numeroDePagina - 1) * 20;
+
+  const nuevoListado = await obtenerPokemones(offset);
+  actualizarListado(nuevoListado);
+}
+
 export function crearPaginador(totalPokemones) {
   const $paginador = document.querySelector('.pagination');
   const totalPaginas = Math.ceil(totalPokemones / POKEMONES_POR_PAGINA);
@@ -21,14 +29,6 @@ export function crearPaginador(totalPokemones) {
 
     $pagina.appendChild($link);
     $paginador.appendChild($pagina);
-    contador++;
+    contador += 1;
   }
-}
-
-async function manejarCambioDePagina(e) {
-  const numeroDePagina = e.target.textContent;
-  const offset = (numeroDePagina - 1) * 20;
-
-  const nuevoListado = await obtenerPokemones(offset);
-  actualizarListado(nuevoListado);
 }

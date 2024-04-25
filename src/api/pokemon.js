@@ -5,10 +5,10 @@ export async function obtenerPokemones(offset = 0, limite = LIMITE_POKEMONES) {
   const listadoPokemon = await fetch(
     `${BASE_URL}?offset=${offset}&limite=${limite}`,
   );
-  return await listadoPokemon.json();
+  return listadoPokemon.json();
 }
 
 export async function obtenerPokemon(nombre) {
   const pokemon = await fetch(`${BASE_URL}${nombre}`);
-  return await pokemon.json();
+  return pokemon.json();
 }
